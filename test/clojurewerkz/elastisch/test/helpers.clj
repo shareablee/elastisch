@@ -10,14 +10,16 @@
 (defn infer-cluster-name
   "Returns current cluster name set via the ES_CLUSTER_NAME env variable"
   []
-  (get (System/getenv) "ES_CLUSTER_NAME" "elasticsearch_antares"))
+  (get (System/getenv) "ES_CLUSTER_NAME"))
 
 (defn connect-native-client
   ([]
      (connect-native-client (infer-cluster-name)))
   ([cluster-name]
+   (if cluster-name
      (es/connect! [["127.0.0.1" 9300]]
-                  {"cluster.name" cluster-name })))
+                  {"cluster.name" cluster-name})
+     (es/connect! [["127.0.0.1" 9300]]))))
 
 (defn maybe-connect-native-client
   []

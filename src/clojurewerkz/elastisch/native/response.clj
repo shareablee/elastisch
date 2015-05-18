@@ -4,6 +4,10 @@
 ;; API
 ;;
 
+(defn created?
+  [m]
+  (:created m))
+
 (defn ok?
   [response]
   ;; TODO: can this be detected more precisely
