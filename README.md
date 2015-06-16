@@ -3,6 +3,10 @@
 Elastisch is a minimalistic [Clojure client for
 ElasticSearch](http://clojureelasticsearch.info), a modern distributed search engine.
 
+## Change Log
+
+### Version 2.2.0-beta5
+* Releasing the editited version of elastisch. Later features of the client have been backported to the older version of the client we use (for 0.9 compatibility reasons)
 
 ## Project Goals
 
