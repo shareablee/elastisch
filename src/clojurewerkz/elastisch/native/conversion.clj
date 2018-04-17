@@ -925,7 +925,7 @@
   req)
 
 (defn- apply-remove-alias
-  [^IndicesAliasesRequest req {:keys {index alias}}]
+  [^IndicesAliasesRequest req {:keys [index alias]}]
   (.removeAlias req ^String index ^String alias)
   req)
 
